@@ -97,7 +97,7 @@ def handle_answer(call):
     key = data["key"]
     q = tests[key][index]
 
-choice = int(call.data.split("_")[1])
+ choice = int(call.data.split("_")[1])
     if choice == q["answer"]:
         data["score"] += 1
         bot.answer_callback_query(call.id, "✅ To‘g‘ri!")
@@ -106,7 +106,3 @@ choice = int(call.data.split("_")[1])
 
     data["index"] += 1
     send_question(call.message.chat.id)
-
-
-print("🤖 Bot ishga tushdi...")
-bot.infinity_polling()
