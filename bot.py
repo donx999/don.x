@@ -98,7 +98,7 @@ def handle_answer(call):
     q = tests[key][index]
 
 choice = int(call.data.split("_")[1])
-    if choice == q["answer"]:
+if choice == q["answer"]:
         data["score"] += 1
         bot.answer_callback_query(call.id, "✅ To‘g‘ri!")
     else:
