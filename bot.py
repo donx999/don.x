@@ -71,7 +71,8 @@ def start_test(chat_id, key):
 
 def send_question(chat_id):
     data = user_data.get(chat_id)
-    if not data: return
+    if not data:
+        return
 
     key = data["key"]
     index = data["index"]
@@ -91,13 +92,14 @@ def send_question(chat_id):
 @bot.callback_query_handler(func=lambda call: call.data.startswith("answer_"))
 def handle_answer(call):
     data = user_data.get(call.message.chat.id)
-    if not data: return
+    if not data:
+        return
 
     index = data["index"]
     key = data["key"]
     q = tests[key][index]
 
- choice = int(call.data.split("_")[1])
+    choice = int(call.data.split("_")[1])
     if choice == q["answer"]:
         data["score"] += 1
         bot.answer_callback_query(call.id, "✅ To‘g‘ri!")
@@ -106,3 +108,7 @@ def handle_answer(call):
 
     data["index"] += 1
     send_question(call.message.chat.id)
+
+# 📌 Botni ishga tushirish
+bot.polling()
+
