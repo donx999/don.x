@@ -3,7 +3,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from tests import tests
 
 # 🔑 Tokeningizni shu yerga yozing
-TOKEN = "8391309835:AAEpzJS9M3aJCxffYCIwQs4EIeKCzTzOmwM"
+TOKEN = "8195337626:AAH6EVM49qscyePqb13qUTm54sy5RIqyoqI"
 CHANNEL_USERNAME = "@Geografiya_attestatsiya1"
 
 bot = telebot.TeleBot(TOKEN)
